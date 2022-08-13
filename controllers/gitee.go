@@ -8,14 +8,12 @@ import (
 )
 
 type GiteePayload struct {
-	Ref      string              `json:"ref"`
-	HookName string              `json:"hook_name"`
-	Password string              `json:"password"`
-	Project  GiteePayloadProject `json:"project"`
-}
-
-type GiteePayloadProject struct {
-	PathWithNameSpace string `json:"path_with_namespace"`
+	Ref      string `json:"ref"`
+	HookName string `json:"hook_name"`
+	Password string `json:"password"`
+	Project  struct {
+		PathWithNameSpace string `json:"path_with_namespace"`
+	} `json:"project"`
 }
 
 func ParseGitee(c *gin.Context) {

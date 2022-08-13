@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	gin.Mode()
+	gin.SetMode("release")
 	r := gin.New()
 
 	r.GET("/", func(c *gin.Context) {

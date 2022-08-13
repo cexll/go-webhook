@@ -51,9 +51,11 @@ func ParseGithub(c *gin.Context) {
 	}
 
 	for _, v := range config.GitHub {
-
 		mac := hmac.New(sha256.New, []byte(v.Password))
-		_, _ = mac.Write(body)
+		_, err = mac.Write(body)
+		if err != nil {
+			continue
+		}
 		expectedMAC := hex.EncodeToString(mac.Sum(nil))
 		if !hmac.Equal([]byte(header.XHubSignature256[7:]), []byte(expectedMAC)) {
 			continue
