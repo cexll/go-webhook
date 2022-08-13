@@ -1,17 +1,3 @@
-# go-webhook
-Use the webhook written in go to provide convenience for cicd
-
-# Installation
-
-```bash
-git clone https://github.com/cexll/go-webhook.git
-go build -o webhook main.go
-```
-
-> download package [release](https://github.com/cexll/swoole-webhook/releases)
-# Configure
-
-```json
 {
   "github": [
     {
@@ -36,6 +22,3 @@ go build -o webhook main.go
     }
   ]
 }
-```
-# License
-Apache License Version 2.0, http://www.apache.org/licenses/ 
