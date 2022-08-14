@@ -8,7 +8,7 @@ git clone https://github.com/cexll/go-webhook.git
 go build -o webhook main.go
 ```
 
-> download package [release](https://github.com/cexll/swoole-webhook/releases)
+> download package [release](https://github.com/cexll/go-webhook/releases)
 # Configure
 
 ```json
