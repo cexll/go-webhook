@@ -2,18 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"go_webhook/controllers"
+	"go_webhook/route"
 )
 
 func main() {
-	gin.SetMode("release")
-	r := gin.New()
-
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "hello world")
-	})
-	r.POST("/github", controllers.ParseGithub)
-	r.POST("/gitee", controllers.ParseGitee)
+	gin.SetMode(gin.ReleaseMode)
+	r := gin.Default()
+	route.Load(r)
 	err := r.Run(":8080")
 	if err != nil {
 		panic(err)
