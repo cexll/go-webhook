@@ -26,6 +26,7 @@ func ParseGitee(c *gin.Context) {
 	err = c.Bind(&payload)
 	if err != nil {
 		c.String(200, "server error")
+		return
 	}
 
 	for _, v := range config.Gitee {
