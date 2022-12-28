@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -27,6 +28,7 @@ type GiteeConf struct {
 }
 
 func FileGetContent(path string) (*Conf, error) {
+	fmt.Println("file get path", path)
 	file, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err

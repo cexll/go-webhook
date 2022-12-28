@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"github.com/gin-gonic/gin"
-	config2 "go_webhook/config"
+	config2 "go_webhook/internal/config"
 	"os/exec"
-	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 type GiteePayload struct {
@@ -46,9 +46,7 @@ func ParseGitee(c *gin.Context) {
 			break
 		}
 		for _, cmd := range v.Cmds {
-			arrCmd := strings.Split(cmd, " ")
-			commandName := arrCmd[0]
-			_ = exec.Command(commandName, arrCmd[1:]...).Run()
+			_ = exec.Command("bash", "-c", cmd).Run()
 		}
 	}
 	c.String(200, "gitee hook")

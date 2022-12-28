@@ -2,7 +2,7 @@ package route
 
 import (
 	"github.com/gin-gonic/gin"
-	"go_webhook/controllers"
+	"go_webhook/internal/controllers"
 )
 
 func Load(r *gin.Engine) {

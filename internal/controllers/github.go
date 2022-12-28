@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"github.com/gin-gonic/gin"
-	config2 "go_webhook/config"
+	config2 "go_webhook/internal/config"
 	"os/exec"
 	"strings"
 )
