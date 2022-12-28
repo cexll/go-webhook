@@ -1,11 +1,17 @@
 # go-webhook
 Use the webhook written in go to provide convenience for cicd
 
-# Installation
+# Install
 
 ```bash
 git clone https://github.com/cexll/go-webhook.git
 go build -o server cmd/server.go
+```
+
+# Run
+
+```bash
+./server -p 8080
 ```
 
 > download package [release](https://github.com/cexll/go-webhook/releases)
